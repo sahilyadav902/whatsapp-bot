@@ -2,8 +2,7 @@ import os
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
-# from embedchain import App
-from embedchain.apps.App import App
+from embedchain import App
 
 app = Flask(__name__)
 chat_bot = App()
