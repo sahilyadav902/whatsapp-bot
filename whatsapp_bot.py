@@ -1,7 +1,5 @@
-import os
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-
 from embedchain import App
 
 app = Flask(__name__)
@@ -39,10 +37,9 @@ def add_sources(message):
 def query(message):
     try:
         response = chat_bot.chat(message)
-    except Exception as e:
+    except Exception:
         response = "An error occurred. Please try again!"
     return response
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
-
